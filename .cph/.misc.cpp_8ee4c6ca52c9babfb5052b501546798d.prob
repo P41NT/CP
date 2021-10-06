@@ -1,0 +1,1 @@
+{"name":"Local: misc","url":"/Users/exploiter/Desktop/cp/misc.cpp","tests":[{"id":1632494315877,"input":"8090291","output":"2 2 3 7 13"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/exploiter/Desktop/cp/misc.cpp","group":"local","local":true}
