@@ -12,15 +12,31 @@ using namespace std;
 void solve(){
     //code goes here
     int n;
-    cin>>n;
-    vector<int> v(n);
-    forj(i, n){
-        cin>>v[i];
+    char c;
+    cin>>n>>c;
+    vector<char> s(n + 1);
+    bool ok = true;
+    for(int i = 1; i <= n; i++){
+        cin>>s[i];
+        if(s[i] != c) ok = false;
     }
-    for(int i = 0; i < n-1; i++){
-        for(int j = i + 1; j < n; j++){
-
+    if(!ok){
+        for(int i = 1; i <= n; i++){
+            ok = true;
+            for(int j = i; j <= n; j += i){
+                ok &= s[j] == c;
+            }
+            if(ok){
+                cout<<1<<endl<<i<<endl;
+                break;
+            }
         }
+        if(!ok){
+            cout<<2<<endl<<n-1<<" "<<n<<endl;
+        }
+    }
+    else{
+        cout<<0<<endl;
     }
 }
 
