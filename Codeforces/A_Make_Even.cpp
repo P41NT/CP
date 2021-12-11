@@ -6,13 +6,21 @@ using namespace std;
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
-    for(int i = 1; i <= n; i++){
-        cin>>arr[i];
+    string s;
+    cin>>s;
+    if((s[s.size() -1 ] - '0') % 2 == 0) cout<<"0"<<endl;
+    else if((s[0] - '0') % 2 == 0) cout<<"1"<<endl;
+    else {
+        bool flag = false;
+        for(char c : s){
+            if((c - '0') % 2 == 0) {
+                flag = true;
+                cout<<2<<endl;
+                break;
+            }
+        }
+        if(!flag) cout<<-1<<endl;
     }
-    
 }
 
 int32_t main(){
@@ -21,8 +29,8 @@ int32_t main(){
 
     //================================================================
     int t;
-    t = 1;
-    //cin>>t;
+    // t = 1;
+    cin>>t;
     while(t--){
         solve();
     }

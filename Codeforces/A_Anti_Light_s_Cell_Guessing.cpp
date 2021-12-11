@@ -5,14 +5,11 @@ using namespace std;
 #define endl "\n"
 
 void solve(){
-    //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
-    for(int i = 1; i <= n; i++){
-        cin>>arr[i];
-    }
-    
+    int a, b;
+    cin>>a>>b;
+    if(a == 1 && b == 1) cout<<0<<endl;
+    else if(min(a, b) == 1) cout<<1<<endl;
+    else cout<<2<<endl;
 }
 
 int32_t main(){
@@ -21,8 +18,8 @@ int32_t main(){
 
     //================================================================
     int t;
-    t = 1;
-    //cin>>t;
+    // t = 1;
+    cin>>t;
     while(t--){
         solve();
     }

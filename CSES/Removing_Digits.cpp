@@ -3,16 +3,28 @@ using namespace std;
 
 #define int long long int
 #define endl "\n"
+#define INF INT_MAX 
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
+    int n; cin>>n;
+    vector<int> dp(n + 1, 0);
+    int dup, dig;
+    dp[0] = 0;
     for(int i = 1; i <= n; i++){
-        cin>>arr[i];
+        set<int> digits;
+        dup = i;
+        while(dup > 0){
+            dig = dup%10;
+            digits.insert(dig);
+            dup /= 10;
+        }
+        dp[i] = INF;
+        for(auto dig: digits){
+            dp[i] = min(dp[i], 1 + dp[i - dig]);
+        }
     }
-    
+    cout<<dp[n]<<endl;
 }
 
 int32_t main(){

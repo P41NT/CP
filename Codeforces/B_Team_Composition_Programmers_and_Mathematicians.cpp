@@ -6,13 +6,11 @@ using namespace std;
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
-    for(int i = 1; i <= n; i++){
-        cin>>arr[i];
-    }
-    
+    int a, b;
+    cin>>a>>b;
+    int expected = (a + b)/ 4;
+    int minj = min(a, b);
+    cout<<min(minj, expected)<<endl;
 }
 
 int32_t main(){
@@ -21,8 +19,8 @@ int32_t main(){
 
     //================================================================
     int t;
-    t = 1;
-    //cin>>t;
+    // t = 1;
+    cin>>t;
     while(t--){
         solve();
     }

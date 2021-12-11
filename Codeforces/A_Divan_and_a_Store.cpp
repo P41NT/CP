@@ -6,13 +6,24 @@ using namespace std;
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
+    int n, l, r, k;
+    cin>>n>>l>>r>>k;
+    vector<int> arr;
     for(int i = 1; i <= n; i++){
-        cin>>arr[i];
+        int temp; cin>>temp;
+        if(temp >= l && temp <= r) arr.push_back(temp);
     }
-    
+    sort(arr.begin(), arr.end());
+    int curr = 0; int ans = 0;
+    for(auto s : arr) {
+        // cout<<s<<" ";
+        if(curr > k) break;
+        else if(curr + s <= k){
+            curr += s;
+            ans++;
+        } 
+    }
+    cout<<ans<<endl;
 }
 
 int32_t main(){
@@ -21,8 +32,8 @@ int32_t main(){
 
     //================================================================
     int t;
-    t = 1;
-    //cin>>t;
+    // t = 1;
+    cin>>t;
     while(t--){
         solve();
     }

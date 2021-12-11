@@ -6,13 +6,19 @@ using namespace std;
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
-    for(int i = 1; i <= n; i++){
-        cin>>arr[i];
+    string s;
+    string t;
+    string ans = "";
+    cin>>s>>t;
+    for(int i = 0; i < s.size(); i++){
+        ans += s[i];
+        if(ans.size() >= t.size()){
+            if(ans.substr(ans.size() - t.size(), ans.size() - 1) == t){
+                ans.erase(ans.size() - t.size(), t.size());
+            }
+        }
     }
-    
+    cout<<ans<<endl;
 }
 
 int32_t main(){

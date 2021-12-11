@@ -6,13 +6,13 @@ using namespace std;
 
 void solve(){
     //code goes here
-    int n, x;
-    cin>>n>>x;
-    vector<int> arr(n+ 1);
-    for(int i = 1; i <= n; i++){
-        cin>>arr[i];
-    }
-    
+    int x, y, a, b;
+    cin>>x>>y>>a>>b;
+    b = min(b, a * 2);
+    int ans = 0;
+    if(x > y) swap(x, y);
+    ans += x * b + (y - x) * a;
+    cout<<ans<<endl;
 }
 
 int32_t main(){
@@ -21,8 +21,8 @@ int32_t main(){
 
     //================================================================
     int t;
-    t = 1;
-    //cin>>t;
+    // t = 1;
+    cin>>t;
     while(t--){
         solve();
     }
