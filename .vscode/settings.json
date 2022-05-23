@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "set": "cpp",
+        "ios": "cpp",
+        "vector": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "rpc.enabled": false
+}
